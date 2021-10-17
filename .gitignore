@@ -1,2 +1,3 @@
 *.lock.hcl
-tarraform-provider*
+ENV/Dev/.terraform/providers/registry.terraform.io/hashicorp/aws/3.63.0/linux_amd64/terraform-provider-aws_v3.63.0_x5
+ENV/Dev/.terraform/modules/modules.json
