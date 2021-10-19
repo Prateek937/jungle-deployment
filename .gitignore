@@ -1,3 +1,11 @@
 *.lock.hcl
+.terraform/providers/registry.terraform.io/hashicorp/aws/3.63.0/linux_amd64/terraform-provider-aws_v3.63.0_x5
+modules.json
+terraform.tfstate*
+*/terraform/providers/registry.terraform.io/hashicorp/aws/3.63.0/linux_amd64/terraform-provider-aws_v3.63.0_x5
+*/.terraform/providers/registry.terraform.io/hashicorp/aws/3.63.0/linux_amd64/terraform-provider-aws_v3.63.0_x5
 ENV/Dev/.terraform/providers/registry.terraform.io/hashicorp/aws/3.63.0/linux_amd64/terraform-provider-aws_v3.63.0_x5
-ENV/Dev/.terraform/modules/modules.json
+ENV/Dev2/.terraform/providers/registry.terraform.io/hashicorp/aws/3.63.0/linux_amd64/terraform-provider-aws_v3.63.0_x5
+ENV/Dev3/.terraform/providers/registry.terraform.io/hashicorp/aws/3.63.0/linux_amd64/terraform-provider-aws_v3.63.0_x5
+Research/testing/.terraform/providers/registry.terraform.io/hashicorp/aws/3.63.0/linux_amd64/terraform-provider-aws_v3.63.0_x5
+Research/test/.terraform/providers/registry.terraform.io/hashicorp/aws/3.63.0/linux_amd64/terraform-provider-aws_v3.63.0_x5

@@ -1,10 +1,7 @@
-provider "aws" {
-  region = var.aws_region
-}
-
 module "network" {
+  # count = length(var.aws_region)
   source = "../../Modules/NETWORK"
-  aws_region = var.aws_region
+  # aws_region = var.aws_region[count.index]
   cluster-name = var.cluster-name
   availability_zone = var.availability_zone
 
