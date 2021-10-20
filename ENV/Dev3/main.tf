@@ -4,6 +4,8 @@ module "network" {
   region = each.value
 }
 
+# Network = EKS
+
 module "apps_deployment" {
   source = ".../../Modules/SERVER_DEPLOYMENT"
   for_each = var.image_names

@@ -1,20 +1,36 @@
-variable "regions" {
+# variable "name" {
+#   default = "test"
+# }
+
+variable "webservers" {
   type = map
   default = {
-    "Webserver1" = "us-east-1"
-    "Webserver2" = "us-west-2"
-    "Webserver3" = "ap-south-1"
+    "john" = {
+                "region" = "us-east-1", 
+                "image" = "Node-app-image"
+                "siblings" = ["jane"]
+              }
+    "jane" = {
+                "region" = "eu-west-2", 
+                "image" = "Node-app-image"
+                "sibings" = ["john"]
+              }
+
+              
   }
+
+
 }
 
-variable "image_names" {
-  type = map
-  default = {
-    "Webserver1" = "Node-app-image-1"
-    "Webserver2" = "Node-app-image-2"
-    "Webserver3" = "Node-app-image-3"
-  }
-}
+# variable "image_names" {
+#   type = map
+#   default = {
+#     "Webserver1" = "Node-app-image-1"
+#     "Webserver2" = "Node-app-image-2"
+#     "Webserver3" = "Node-app-image-3"
+#   }
+# }
+
 
 
 
