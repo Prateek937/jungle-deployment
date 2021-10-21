@@ -1,0 +1,14 @@
+{
+    "john" : {
+        "region" : "us-east-1", 
+        "image" : "Node-app-image",
+        "siblings" : ["jane"],
+        "cluster_name": "jungle-eks-us-east-1"
+    },
+    "jane" : {
+                "region" : "eu-west-2", 
+                "image" : "Node-app-image",
+                "siblings" : ["john"],
+                "cluster_name": "jungle-eks-eu-west-2"
+              }
+}
