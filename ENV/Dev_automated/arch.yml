@@ -1,0 +1,13 @@
+node: 
+    NODE:
+      - VPC(node-vpc)
+      - SUBNET(PUBLIC)
+      - EKS
+      - IAM
+      - IAM ROLES
+
+mongo:
+  MONGO:
+    - VPC(node-vpc)
+    - SUBNET(PRIVATE)
+  

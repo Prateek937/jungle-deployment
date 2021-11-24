@@ -1,0 +1,114 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] module.ec2.aws_instance.foo1 (expand)" [label = "module.ec2.aws_instance.foo1", shape = "box"]
+		"[root] module.ec2.aws_network_interface.foo1 (expand)" [label = "module.ec2.aws_network_interface.foo1", shape = "box"]
+		"[root] module.ec2.aws_subnet.my_subnet_1 (expand)" [label = "module.ec2.aws_subnet.my_subnet_1", shape = "box"]
+		"[root] module.ec2.aws_vpc.my_vpc_1 (expand)" [label = "module.ec2.aws_vpc.my_vpc_1", shape = "box"]
+		"[root] module.ec2.provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "module.ec2.provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] module.network.aws_eks_cluster.jungle_eks_cluster (expand)" [label = "module.network.aws_eks_cluster.jungle_eks_cluster", shape = "box"]
+		"[root] module.network.aws_eks_node_group.jungle_ng (expand)" [label = "module.network.aws_eks_node_group.jungle_ng", shape = "box"]
+		"[root] module.network.aws_iam_role.jungle_cluster_role (expand)" [label = "module.network.aws_iam_role.jungle_cluster_role", shape = "box"]
+		"[root] module.network.aws_iam_role.jungle_node (expand)" [label = "module.network.aws_iam_role.jungle_node", shape = "box"]
+		"[root] module.network.aws_iam_role_policy_attachment.jungle_cluster_AmazonEKSClusterPolicy (expand)" [label = "module.network.aws_iam_role_policy_attachment.jungle_cluster_AmazonEKSClusterPolicy", shape = "box"]
+		"[root] module.network.aws_iam_role_policy_attachment.jungle_cluster_AmazonEKSVPCResourceController (expand)" [label = "module.network.aws_iam_role_policy_attachment.jungle_cluster_AmazonEKSVPCResourceController", shape = "box"]
+		"[root] module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEC2ContainerRegistryReadOnly (expand)" [label = "module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEC2ContainerRegistryReadOnly", shape = "box"]
+		"[root] module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEKSWorkerNodePolicy (expand)" [label = "module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEKSWorkerNodePolicy", shape = "box"]
+		"[root] module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEKS_CNI_Policy (expand)" [label = "module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEKS_CNI_Policy", shape = "box"]
+		"[root] module.network.aws_internet_gateway.jungle_igw (expand)" [label = "module.network.aws_internet_gateway.jungle_igw", shape = "box"]
+		"[root] module.network.aws_route_table.jungle_route_table (expand)" [label = "module.network.aws_route_table.jungle_route_table", shape = "box"]
+		"[root] module.network.aws_route_table_association.jungle_route_table_association (expand)" [label = "module.network.aws_route_table_association.jungle_route_table_association", shape = "box"]
+		"[root] module.network.aws_security_group.jungle_cluster_sg (expand)" [label = "module.network.aws_security_group.jungle_cluster_sg", shape = "box"]
+		"[root] module.network.aws_security_group_rule.jungle_cluster_ingress (expand)" [label = "module.network.aws_security_group_rule.jungle_cluster_ingress", shape = "box"]
+		"[root] module.network.aws_subnet.jungle_subnet (expand)" [label = "module.network.aws_subnet.jungle_subnet", shape = "box"]
+		"[root] module.network.aws_vpc.jungle_vpc (expand)" [label = "module.network.aws_vpc.jungle_vpc", shape = "box"]
+		"[root] module.network.provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "module.network.provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] var.availability_zone" [label = "var.availability_zone", shape = "note"]
+		"[root] var.aws_region" [label = "var.aws_region", shape = "note"]
+		"[root] var.cluster_name" [label = "var.cluster_name", shape = "note"]
+		"[root] var.iam_role_name" [label = "var.iam_role_name", shape = "note"]
+		"[root] var.image_name" [label = "var.image_name", shape = "note"]
+		"[root] var.node_group_name" [label = "var.node_group_name", shape = "note"]
+		"[root] var.siblings" [label = "var.siblings", shape = "note"]
+		"[root] var.webserver" [label = "var.webserver", shape = "note"]
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.ec2 (close)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.network (close)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] var.image_name"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] var.siblings"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] var.webserver"
+		"[root] module.ec2 (close)" -> "[root] module.ec2.aws_instance.foo1 (expand)"
+		"[root] module.ec2 (close)" -> "[root] module.ec2.aws_network_interface.foo1 (expand)"
+		"[root] module.ec2.aws_instance.foo1 (expand)" -> "[root] module.ec2.provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] module.ec2.aws_instance.foo1 (expand)" -> "[root] module.ec2.var.s (expand)"
+		"[root] module.ec2.aws_instance.foo1 (expand)" -> "[root] module.ec2.var.sg_id (expand)"
+		"[root] module.ec2.aws_network_interface.foo1 (expand)" -> "[root] module.ec2.aws_subnet.my_subnet_1 (expand)"
+		"[root] module.ec2.aws_subnet.my_subnet_1 (expand)" -> "[root] module.ec2.aws_vpc.my_vpc_1 (expand)"
+		"[root] module.ec2.aws_vpc.my_vpc_1 (expand)" -> "[root] module.ec2.provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] module.ec2.provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.ec2.aws_instance.foo1 (expand)"
+		"[root] module.ec2.provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.ec2.aws_network_interface.foo1 (expand)"
+		"[root] module.ec2.provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] module.ec2 (expand)"
+		"[root] module.ec2.var.s (expand)" -> "[root] module.ec2 (expand)"
+		"[root] module.ec2.var.s (expand)" -> "[root] module.network.output.s (expand)"
+		"[root] module.ec2.var.sg_id (expand)" -> "[root] module.ec2 (expand)"
+		"[root] module.ec2.var.sg_id (expand)" -> "[root] module.network.output.sg_id (expand)"
+		"[root] module.network (close)" -> "[root] module.network.aws_eks_node_group.jungle_ng (expand)"
+		"[root] module.network (close)" -> "[root] module.network.aws_route_table_association.jungle_route_table_association (expand)"
+		"[root] module.network (close)" -> "[root] module.network.aws_security_group_rule.jungle_cluster_ingress (expand)"
+		"[root] module.network (close)" -> "[root] module.network.output.config_map_aws_auth (expand)"
+		"[root] module.network (close)" -> "[root] module.network.output.kubeconfig (expand)"
+		"[root] module.network (close)" -> "[root] module.network.output.s (expand)"
+		"[root] module.network (close)" -> "[root] module.network.output.sg_id (expand)"
+		"[root] module.network.aws_eks_cluster.jungle_eks_cluster (expand)" -> "[root] module.network.aws_iam_role_policy_attachment.jungle_cluster_AmazonEKSClusterPolicy (expand)"
+		"[root] module.network.aws_eks_cluster.jungle_eks_cluster (expand)" -> "[root] module.network.aws_iam_role_policy_attachment.jungle_cluster_AmazonEKSVPCResourceController (expand)"
+		"[root] module.network.aws_eks_cluster.jungle_eks_cluster (expand)" -> "[root] module.network.aws_security_group.jungle_cluster_sg (expand)"
+		"[root] module.network.aws_eks_cluster.jungle_eks_cluster (expand)" -> "[root] module.network.aws_subnet.jungle_subnet (expand)"
+		"[root] module.network.aws_eks_node_group.jungle_ng (expand)" -> "[root] module.network.aws_eks_cluster.jungle_eks_cluster (expand)"
+		"[root] module.network.aws_eks_node_group.jungle_ng (expand)" -> "[root] module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEC2ContainerRegistryReadOnly (expand)"
+		"[root] module.network.aws_eks_node_group.jungle_ng (expand)" -> "[root] module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEKSWorkerNodePolicy (expand)"
+		"[root] module.network.aws_eks_node_group.jungle_ng (expand)" -> "[root] module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEKS_CNI_Policy (expand)"
+		"[root] module.network.aws_iam_role.jungle_cluster_role (expand)" -> "[root] module.network.provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] module.network.aws_iam_role.jungle_cluster_role (expand)" -> "[root] module.network.var.iam_role_name (expand)"
+		"[root] module.network.aws_iam_role.jungle_node (expand)" -> "[root] module.network.provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] module.network.aws_iam_role.jungle_node (expand)" -> "[root] module.network.var.node_group_name (expand)"
+		"[root] module.network.aws_iam_role_policy_attachment.jungle_cluster_AmazonEKSClusterPolicy (expand)" -> "[root] module.network.aws_iam_role.jungle_cluster_role (expand)"
+		"[root] module.network.aws_iam_role_policy_attachment.jungle_cluster_AmazonEKSVPCResourceController (expand)" -> "[root] module.network.aws_iam_role.jungle_cluster_role (expand)"
+		"[root] module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEC2ContainerRegistryReadOnly (expand)" -> "[root] module.network.aws_iam_role.jungle_node (expand)"
+		"[root] module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEKSWorkerNodePolicy (expand)" -> "[root] module.network.aws_iam_role.jungle_node (expand)"
+		"[root] module.network.aws_iam_role_policy_attachment.jungle_node_AmazonEKS_CNI_Policy (expand)" -> "[root] module.network.aws_iam_role.jungle_node (expand)"
+		"[root] module.network.aws_internet_gateway.jungle_igw (expand)" -> "[root] module.network.aws_vpc.jungle_vpc (expand)"
+		"[root] module.network.aws_route_table.jungle_route_table (expand)" -> "[root] module.network.aws_internet_gateway.jungle_igw (expand)"
+		"[root] module.network.aws_route_table_association.jungle_route_table_association (expand)" -> "[root] module.network.aws_route_table.jungle_route_table (expand)"
+		"[root] module.network.aws_route_table_association.jungle_route_table_association (expand)" -> "[root] module.network.aws_subnet.jungle_subnet (expand)"
+		"[root] module.network.aws_security_group.jungle_cluster_sg (expand)" -> "[root] module.network.aws_vpc.jungle_vpc (expand)"
+		"[root] module.network.aws_security_group_rule.jungle_cluster_ingress (expand)" -> "[root] module.network.aws_security_group.jungle_cluster_sg (expand)"
+		"[root] module.network.aws_subnet.jungle_subnet (expand)" -> "[root] module.network.aws_vpc.jungle_vpc (expand)"
+		"[root] module.network.aws_subnet.jungle_subnet (expand)" -> "[root] module.network.var.availability_zone (expand)"
+		"[root] module.network.aws_subnet.jungle_subnet (expand)" -> "[root] module.network.var.cluster_name (expand)"
+		"[root] module.network.aws_vpc.jungle_vpc (expand)" -> "[root] module.network.provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] module.network.local.config_map_aws_auth (expand)" -> "[root] module.network.aws_iam_role.jungle_node (expand)"
+		"[root] module.network.local.kubeconfig (expand)" -> "[root] module.network.aws_eks_cluster.jungle_eks_cluster (expand)"
+		"[root] module.network.output.config_map_aws_auth (expand)" -> "[root] module.network.local.config_map_aws_auth (expand)"
+		"[root] module.network.output.kubeconfig (expand)" -> "[root] module.network.local.kubeconfig (expand)"
+		"[root] module.network.output.s (expand)" -> "[root] module.network.aws_eks_cluster.jungle_eks_cluster (expand)"
+		"[root] module.network.output.sg_id (expand)" -> "[root] module.network.aws_security_group.jungle_cluster_sg (expand)"
+		"[root] module.network.provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.network.aws_eks_node_group.jungle_ng (expand)"
+		"[root] module.network.provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.network.aws_route_table_association.jungle_route_table_association (expand)"
+		"[root] module.network.provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.network.aws_security_group_rule.jungle_cluster_ingress (expand)"
+		"[root] module.network.provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] module.network.var.aws_region (expand)"
+		"[root] module.network.var.availability_zone (expand)" -> "[root] module.network (expand)"
+		"[root] module.network.var.availability_zone (expand)" -> "[root] var.availability_zone"
+		"[root] module.network.var.aws_region (expand)" -> "[root] module.network (expand)"
+		"[root] module.network.var.aws_region (expand)" -> "[root] var.aws_region"
+		"[root] module.network.var.cluster_name (expand)" -> "[root] module.network (expand)"
+		"[root] module.network.var.cluster_name (expand)" -> "[root] var.cluster_name"
+		"[root] module.network.var.iam_role_name (expand)" -> "[root] module.network (expand)"
+		"[root] module.network.var.iam_role_name (expand)" -> "[root] var.iam_role_name"
+		"[root] module.network.var.node_group_name (expand)" -> "[root] module.network (expand)"
+		"[root] module.network.var.node_group_name (expand)" -> "[root] var.node_group_name"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] module.ec2.provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+		"[root] root" -> "[root] module.network.provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+	}
+}
+

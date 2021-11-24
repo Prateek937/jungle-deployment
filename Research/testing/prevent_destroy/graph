@@ -1,0 +1,45 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] module.Network.aws_instance.foo (expand)" [label = "module.Network.aws_instance.foo", shape = "box"]
+		"[root] module.Network.aws_network_interface.foo (expand)" [label = "module.Network.aws_network_interface.foo", shape = "box"]
+		"[root] module.Network.aws_subnet.my_subnet (expand)" [label = "module.Network.aws_subnet.my_subnet", shape = "box"]
+		"[root] module.Network.aws_vpc.my_vpc (expand)" [label = "module.Network.aws_vpc.my_vpc", shape = "box"]
+		"[root] module.Network.provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "module.Network.provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] module.ec2-1.aws_instance.foo1 (expand)" [label = "module.ec2-1.aws_instance.foo1", shape = "box"]
+		"[root] module.ec2-1.aws_network_interface.foo1 (expand)" [label = "module.ec2-1.aws_network_interface.foo1", shape = "box"]
+		"[root] module.ec2-1.aws_subnet.my_subnet_1 (expand)" [label = "module.ec2-1.aws_subnet.my_subnet_1", shape = "box"]
+		"[root] module.ec2-1.aws_vpc.my_vpc_1 (expand)" [label = "module.ec2-1.aws_vpc.my_vpc_1", shape = "box"]
+		"[root] module.ec2-1.provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "module.ec2-1.provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.Network (close)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.ec2-1 (close)"
+		"[root] module.Network (close)" -> "[root] module.Network.aws_instance.foo (expand)"
+		"[root] module.Network (close)" -> "[root] module.Network.aws_network_interface.foo (expand)"
+		"[root] module.Network (close)" -> "[root] module.Network.output.subnet_id (expand)"
+		"[root] module.Network.aws_instance.foo (expand)" -> "[root] module.Network.aws_subnet.my_subnet (expand)"
+		"[root] module.Network.aws_network_interface.foo (expand)" -> "[root] module.Network.aws_subnet.my_subnet (expand)"
+		"[root] module.Network.aws_subnet.my_subnet (expand)" -> "[root] module.Network.aws_vpc.my_vpc (expand)"
+		"[root] module.Network.aws_vpc.my_vpc (expand)" -> "[root] module.Nework.provider[\"registry.terraform.io/hashitcorp/aws\"]"
+		"[root] module.Network.output.subnet_id (expand)" -> "[root] module.Network.aws_subnet.my_subnet (expand)"
+		"[root] module.Network.provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.Network.aws_instance.foo (expand)"
+		"[root] module.Network.provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.Network.aws_network_interface.foo (expand)"
+		"[root] module.Network.provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] module.Network (expand)"
+		"[root] module.ec2-1 (close)" -> "[root] module.ec2-1.aws_instance.foo1 (expand)"
+		"[root] module.ec2-1 (close)" -> "[root] module.ec2-1.aws_network_interface.foo1 (expand)"
+		"[root] module.ec2-1.aws_instance.foo1 (expand)" -> "[root] module.ec2-1.provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] module.ec2-1.aws_instance.foo1 (expand)" -> "[root] module.ec2-1.var.subnet_id (expand)"
+		"[root] module.ec2-1.aws_network_interface.foo1 (expand)" -> "[root] module.ec2-1.aws_subnet.my_subnet_1 (expand)"
+		"[root] module.ec2-1.aws_subnet.my_subnet_1 (expand)" -> "[root] module.ec2-1.aws_vpc.my_vpc_1 (expand)"
+		"[root] module.ec2-1.aws_vpc.my_vpc_1 (expand)" -> "[root] module.ec2-1.provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] module.ec2-1.provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.ec2-1.aws_instance.foo1 (expand)"
+		"[root] module.ec2-1.provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.ec2-1.aws_network_interface.foo1 (expand)"
+		"[root] module.ec2-1.provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] module.ec2-1 (expand)"
+		"[root] module.ec2-1.var.subnet_id (expand)" -> "[root] module.Network.output.subnet_id (expand)"
+		"[root] module.ec2-1.var.subnet_id (expand)" -> "[root] module.ec2-1 (expand)"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] module.Network.provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+		"[root] root" -> "[root] module.ec2-1.provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+	}
+}
+

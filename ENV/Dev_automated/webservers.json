@@ -1,0 +1,38 @@
+{ 
+    "webservers":{
+
+
+        "jane" : {
+                    "region" : "eu-west-2", 
+                    "image" : "Node-app-image",
+                    "siblings" : ["john"],
+                    "cluster_name": "jungle-eks-eu-west-2"
+        },
+
+        "june" : {
+            "region" : "eu-west-2", 
+            "image" : "Node-app-image",
+            "siblings" : ["john","jane"],
+            "cluster_name": "jungle-eks-eu-west-2"
+        }
+
+    },
+
+    "Mongos" : {
+        "john-M" : {
+            "region" : "us-east-1", 
+            "image" : "Node-app-image",
+            "siblings" : ["jane"],
+            "cluster_name": "jungle-eks-us-east-1" 
+            
+        },
+
+        "jane-M" : {
+                    "region" : "eu-west-2", 
+                    "image" : "Node-app-image",
+                    "siblings" : ["john"],
+                    "cluster_name": "jungle-eks-eu-west-2"
+        }
+    }
+
+}

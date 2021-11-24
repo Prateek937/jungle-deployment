@@ -1,0 +1,24 @@
+Naming Rules:
+
+Resource names must be build on the following construct:
+ - <solution_name>-<stage>-<instance_name>/<sequence_number>-<resource-type> 
+        (ex.   ex05-dev-master-eks, ex05-1)
+
+ - No resource type in name (x)
+ - No region name in name
+ - stage of the solution
+
+ When we talk about subnet:
+ - <solution_name>-<stage>-<type>-<sequence_number>
+
+Tagging Rules:
+
+1. the resources which is strongly connected 
+Name : instance
+Solution : ex05
+Stage : Dev
+
+
+    "kubernetes.io/cluster/${var.eks_cluster_name}" = "shared",
+
+

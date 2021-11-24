@@ -1,0 +1,7 @@
+$ helm install my-release ingress-nginx/ingress-nginx \
+--namespace ingress-basic \ 
+--set controller.replicaCount=2 \
+--set controller.node.Selector."Solution"=EX07 \
+--set defaultBackend.nodeSelector."Solution"=EX07
+
+
